@@ -43,7 +43,7 @@ class PunchesController < ApplicationController
   # POST /punches.xml
   def create
     @punch = Punch.new(params[:punch])
-    @punch.timeIn = Chronic.parse("8:28am")
+    @punch.timeIn = Chronic.parse(params[:punch])
     respond_to do |format|
       if @punch.save
         format.html { redirect_to(@punch, :notice => 'Punch was successfully created.') }
