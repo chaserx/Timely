@@ -1,0 +1,25 @@
+<h1>Listing punches</h1>
+
+<table>
+  <tr>
+    <th>Timein</th>
+    <th>Timeout</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @punches.each do |punch| %>
+  <tr>
+    <td><%= punch.timeIn %></td>
+    <td><%= punch.timeOut %></td>
+    <td><%= link_to 'Show', punch %></td>
+    <td><%= link_to 'Edit', edit_punch_path(punch) %></td>
+    <td><%= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Punch', new_punch_path %>
