@@ -9,6 +9,9 @@ gem 'sqlite3'
 
 gem "aaronh-chronic", "0.3.9", :git => 'https://github.com/AaronH/chronic.git' # for ruby 1.9 compatibility
 
+gem 'jquery-rails'
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

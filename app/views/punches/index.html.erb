@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Timein</th>
-    <th>Timeout</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +11,6 @@
 <% @punches.each do |punch| %>
   <tr>
     <td><%= punch.timeIn %></td>
-    <td><%= punch.timeOut %></td>
     <td><%= link_to 'Show', punch %></td>
     <td><%= link_to 'Edit', edit_punch_path(punch) %></td>
     <td><%= link_to 'Destroy', punch, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -10,11 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110301141141) do
+ActiveRecord::Schema.define(:version => 20110312195643) do
 
   create_table "punches", :force => true do |t|
     t.datetime "timeIn"
-    t.datetime "timeOut"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

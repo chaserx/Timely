@@ -27,7 +27,7 @@ class PunchesController < ApplicationController
   # GET /punches/new.xml
   def new
     @punch = Punch.new
-
+    @punch.timeIn = Time.now().strftime("%R")
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @punch }
@@ -43,7 +43,7 @@ class PunchesController < ApplicationController
   # POST /punches.xml
   def create
     @punch = Punch.new(params[:punch])
-    @punch.timeIn = Chronic.parse(params[:punch])
+    #@punch.timeIn = Chronic.parse(params[:punch])
     respond_to do |format|
       if @punch.save
         format.html { redirect_to(@punch, :notice => 'Punch was successfully created.') }
