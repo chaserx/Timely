@@ -27,7 +27,7 @@ class PunchesController < ApplicationController
   # GET /punches/new.xml
   def new
     @punch = Punch.new
-    @punch.timeIn = Time.now().strftime("%R")
+    @punch.timeIn = Time.now() #.strftime("%R")
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @punch }
@@ -82,4 +82,5 @@ class PunchesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

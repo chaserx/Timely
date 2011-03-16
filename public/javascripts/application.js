@@ -13,3 +13,13 @@ $(function(){
         convention: 12,
         val: true });
 });
+
+jQuery(function($) {
+  // when the #search field changes
+  $("#timefield").change(function() {
+    // make a POST call and replace the content
+    $.post(<%= timeout_path %>, function(data) {
+      $("#timeout").html(data);
+    });
+  });
+})

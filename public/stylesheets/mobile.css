@@ -1,0 +1,22 @@
+body {
+  background-color: #FFF;
+}
+
+#wrapper{
+  
+  width:90%;
+  margin:0 auto;
+  text-align:center;
+  font-family: Georgia, serif;
+}
+#clockinformdiv {
+  text-align:center;
+}
+
+form input#punch_timeIn{
+  font: 400% Georgia, serif;
+  width: 200px;
+}  
+.punchinlabel {
+    font-size: 2em;
+}

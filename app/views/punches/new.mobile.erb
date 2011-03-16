@@ -1,0 +1,21 @@
+<%= form_for(@punch) do |f| %>
+  <% if @punch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
+
+      <ul>
+      <% @punch.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :timeIn, "Punch IN", :class => "punchinlabel" %><br />
+    <%= f.time_select :timeIn, {:id => "timefield"} %>
+  </div>
+  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
+  
+<% end %>
+

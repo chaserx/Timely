@@ -3,12 +3,18 @@
 <head>
   <title>Timely</title>
   <%= stylesheet_link_tag :all %>
-  <link title="theme" type="text/css" href="http://ui.jquery.com/applications/themeroller/css/jquery-ui-base.css.php?ctl=themeroller&amp;=" media="screen" rel="Stylesheet" id="themeCSS" />
-  <%= javascript_include_tag :defaults, 'ui.timepickr' %>
+  <%= stylesheet_link_tag 'mobile' if mobile_device? %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 <div id="wrapper">
+  <p>
+    <% if mobile_device? %>
+      <%= link_to "Full Site", :mobile => 0 %>
+    <% else %>
+      <%= link_to "Mobile Site", :mobile => 1 %>
+    <% end %>
+  </p>
   <%= yield %>
 </div>
 </body>
