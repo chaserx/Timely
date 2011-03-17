@@ -1,0 +1,23 @@
+<% if @punch.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
+
+    <ul>
+    <% @punch.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<p>
+  Punch IN:<br />
+  <%= @punch.timeIn.strftime("%R") %>
+</p>
+<p>
+  Punch OUT:<br />
+  <%= @punch.timeOut.strftime("%R") %>
+</p>
+
+<%= link_to 'Edit', edit_punch_path(@punch) %> |
+<%= link_to 'Back', punches_path %>
