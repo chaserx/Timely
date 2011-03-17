@@ -1,21 +1,26 @@
-<%= form_for(@punch) do |f| %>
-  <% if @punch.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
+  <div data-role="header">
+    <h1>You're so <i>timely</i></h1>
+  </div>
+  <div data-role="content">
+  <%= form_for(@punch) do |f| %>
+      <% if @punch.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
 
-      <ul>
-      <% @punch.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @punch.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+    <div class="field">
+      <%= f.time_select :timeIn, {:id => "timefield"} %>
+    </div>
+    <div>
+      <p><br /><%= f.submit "Punch it!", :disable_with => 'Punching...', :class => "submit" %></p>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :timeIn, "Punch IN", :class => "punchinlabel" %><br />
-    <%= f.time_select :timeIn, {:id => "timefield"} %>
   </div>
-  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
   
-<% end %>
 

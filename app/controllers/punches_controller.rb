@@ -8,6 +8,7 @@ class PunchesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.mobile
       format.xml  { render :xml => @punches }
     end
   end
@@ -19,6 +20,7 @@ class PunchesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.mobile
       format.xml  { render :xml => @punch }
     end
   end
@@ -37,6 +39,10 @@ class PunchesController < ApplicationController
   # GET /punches/1/edit
   def edit
     @punch = Punch.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.mobile
+    end
   end
 
   # POST /punches
@@ -46,7 +52,8 @@ class PunchesController < ApplicationController
     #@punch.timeIn = Chronic.parse(params[:punch])
     respond_to do |format|
       if @punch.save
-        format.html { redirect_to(@punch, :notice => 'Punch was successfully created.') }
+        format.html { redirect_to @punch }
+        format.mobile { redirect_to @punch }
         format.xml  { render :xml => @punch, :status => :created, :location => @punch }
       else
         format.html { render :action => "new" }
