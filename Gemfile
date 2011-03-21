@@ -11,6 +11,8 @@ gem "aaronh-chronic", "0.3.9", :git => 'https://github.com/AaronH/chronic.git' #
 
 gem 'jquery-rails'
 
+gem 'heroku'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
