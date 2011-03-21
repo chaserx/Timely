@@ -3,7 +3,7 @@ class Punch < ActiveRecord::Base
   
   before_save :graceful_rounding, :calculate_clock_out
   
-  
+  attr_accessor :timeIn, :timeOut
   
   def calculate_clock_out
     time = self.timeIn
