@@ -1,22 +1,56 @@
+* {margin:0;padding:0;} 
+html{
+  height:100%;
+}
 body {
-  background-color: #FFF;
+  /*background-color: #FFF;*/
+  background: rgb(197,204,211);
+  height:100%;
 }
 
 #wrapper{
-  
-  width:90%;
+  /*width:90%;
+  width:100%;*/
+  min-height: 100%;
+  /*height:480px;*/
   margin:0 auto;
   text-align:center;
-  font-family: Georgia, serif;
+  font-family: Helvetica, sans-serif;
 }
 #clockinformdiv {
   text-align:center;
 }
 
-form input#punch_timeIn{
-  font: 400% Georgia, serif;
-  width: 200px;
-}  
 .punchinlabel {
     font-size: 2em;
+}
+.punchoutlabel {
+    font-size: 2em;
+}
+.times{
+  font: 2em Helvetica, sans-serif;
+  margin-top:1em;
+}
+h1 {
+  /*font:2em Georgia, serif;*/
+  font: bold 28px Georgia, serif;
+  text-shadow: rgba(255,255,255,.2) 0 1px 1px;
+  color: rgb(76, 86, 108);
+  margin: 10px 20px 6px;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom: 50px; /* must be same height as the footer */
+}
+#footer, .push {
+  margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;
+}
+#footer{
+  font-size:60%;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
 }

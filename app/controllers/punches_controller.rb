@@ -52,8 +52,9 @@ class PunchesController < ApplicationController
     #@punch.timeIn = Chronic.parse(params[:punch])
     respond_to do |format|
       if @punch.save
-        format.html { redirect_to @punch }
-        format.mobile { redirect_to @punch }
+        format.html
+        format.mobile
+        format.js
         format.xml  { render :xml => @punch, :status => :created, :location => @punch }
       else
         format.html { render :action => "new" }

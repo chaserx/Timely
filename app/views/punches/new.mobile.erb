@@ -2,7 +2,7 @@
     <h1>You're so <i>timely</i></h1>
   </div>
   <div data-role="content">
-  <%= form_for(@punch) do |f| %>
+  <%= form_for(@punch, :remote => true) do |f| %>
       <% if @punch.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
@@ -16,8 +16,6 @@
       <% end %>
     <div class="field">
       <%= f.time_select :timeIn, {:id => "timefield"} %>
-    </div>
-    <div>
       <p><br /><%= f.submit "Punch it!", :disable_with => 'Punching...', :class => "submit" %></p>
     </div>
   <% end %>
