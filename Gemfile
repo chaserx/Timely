@@ -13,6 +13,8 @@ gem 'jquery-rails'
 
 gem 'heroku'
 
+gem 'dalli'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
